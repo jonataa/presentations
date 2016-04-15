@@ -1,0 +1,847 @@
+<html>
+    <head>
+        <title>PHP - Episódio VII - O Despertar da Força Web</title>
+        
+        <meta name="description" content="Novas funcionalidades para o PHP 7">
+        <meta name="author" content="Marcio Albuquerque">
+        
+        <link rel="stylesheet" href="css/reveal.css" /> 
+        <link rel="stylesheet" href="css/theme/night.css" id="theme" />
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        
+        <link rel="stylesheet" href="css/star-wars.css" />
+        
+        <meta charset="utf-8" />
+    </head>
+    <body onload="StarWarsMusic.start();">
+        <div class="reveal">
+            <div class="slides">
+                <!-- SLIDE 1 -->
+                <section id="start" data-background="#000000">
+
+                    <audio id="star-wars-music">
+                        <source src="star-wars.mp3" type="audio/mpeg" />
+                    </audio>
+
+                    <p id="start">Há muito tempo, em uma internet muito, muito distante&hellip;</p>
+
+                    <h1 id="main-logo">PHP<sub>PHP Hypertext Processor</sub></h1>
+
+                    <div id="titles">
+                        <div id="titlecontent">
+
+                            <p class="center">Episódio VII<br/>O Despertar da Força Web</p>
+
+                            <p>É um período de guerra.</p>
+
+                            <p>Várias linguagens tentam se sobrepor umas as outras para serem as mais usadas na galáxia web.</p>
+
+                            <p>Depois de um período de paz, a Primeira Ordem surge com várias linguagens de programação para tentar derrubar a hegemonia e soberania que o PHP conquistou, com mais de 80% da web.</p>
+                            
+                            <p>Contudo, o conselho do PHP, começa a criar uma nova arma, o PHP 7. Mais rápido, mais seguro, mais uniforme, pode juntar os povos ao redor dessa nova maravilha1</p>
+                            
+                            <p>Inicia-se, então, a distribuição do PHP 7 pela galáxia com várias possibilidades de novas conquistas e aventuras!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 2 -->
+                <section>
+                    <section>
+                        <h1>Padawans?</h1>
+                    </section>
+                    <section data-background="img/death-star-blueprint.gif">
+                        <h1 style="color: yellow;">Como web apps funcionam?</h1>
+                    </section>
+                    <section data-background="img/the-force-is-strong.jpg">
+                        <audio id="light-saber">
+                            <source src="SaberOn.wav" />
+                        </audio>
+                        <h1 id="http-light-saber" class="fragment"
+                            style="font-size: 300px; 
+                            color: lightgreen; 
+                            text-shadow: 20px 20px 20px green,
+                            20px -20px 20px green, 
+                            -20px 20px 20px green, 
+                            -20px -20px 20px green;">
+                            HTTP
+                        </h1>
+                    </section>
+                    <section>
+                        <img style="background-color: transparent; border: none;" src="img/tie-fighter.png" />
+                        <h3 style="position: absolute; top: 300px; left: 100px;" class="fragment">???</h3>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img style="background-color: transparent; border: none;" class="fragment" src="img/death-star.png" />
+                        <h3 style="" class="fragment">X, Y, Z</h3>
+                    </section>
+                    <section>
+                        <h3>Request</h3>
+                        <pre><code>
+                                GET /hello.html HTTP/1.1
+                        </code></pre>
+                        <h3>Response</h3>
+                        <pre><code>
+                                HTTP/1.1 200 OK
+                                Content-Length: 88
+                                Content-Type: text/html
+                                &lt;html&gt;
+                                    &lt;body&gt;
+                                        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                                    &lt;/body&gt;
+                                &lt;/html&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <audio id="darth-sidious-talk">
+                            <source src="darth_sidious.mp3" />
+                        </audio>
+                        <img style="background-color: transparent; border: none;" src="img/tie-fighter.png" />
+                        <h3 style="position: absolute; top: 300px; left: 70px;" class="fragment">PHP???</h3>
+                        <img style="background-color: transparent; border: none;" class="fragment" src="img/death-star.png" />
+                        <h3 class="fragment">??????</h3>
+                        <img id="darth-sidious" style="background-color: transparent; border: none; position: absolute; top: 0; left: 0;" class="fragment" src="img/darth-sidious.png" />
+                        <p style="position: absolute; top: 0; left: 200px;" class="fragment">Use your anger!!</p>
+                    </section>
+                    <section>
+                        <h4>Request</h4>
+                        <pre><code>
+                                GET /hello.php HTTP/1.1
+                        </code></pre>
+                        <h4>PHP</h4>
+                        <pre><code>
+                                &lt;html&gt;
+                                    &lt;body&gt;
+                                    &lt;h1&gt;<mark>&lt;?php echo "Hello, World!"; ?&gt;</mark>&lt;/h1&gt;
+                                    &lt;/body&gt;
+                                &lt;/html&gt;
+                        </code></pre>
+                        <h4>Response</h4>
+                        <pre><code>
+                                HTTP/1.1 200 OK
+                                Content-Length: 88
+                                Content-Type: text/html
+                                &lt;html&gt;
+                                    &lt;body&gt;
+                                        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                                    &lt;/body&gt;
+                                &lt;/html&gt;
+                        </code></pre>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 3 -->
+                <section>
+                    <img src="img/Rasmus-Lerdorf.png" />
+                    <p style="text-decoration: line-through;">George Lucas</p>
+                    <p>Rasmus Lerdorf</p>
+                </section>
+
+                <!-- SLIDE 4 -->
+                <section>
+                    <section>
+                        <h1 class="star-wars-title">PHP/FI<sub>Episódio I - A Ameaça Fantasma</sub></h1>
+                    </section>
+                    <section id="jarjar">
+                        <audio id="jarjar-talks">
+                            <source src="jarjar.mp3" />
+                        </audio>
+                        <img style="background-color: transparent; border: none;" src="img/jar-jar-binks.png" />
+                        <p class="fragment">Me say no more!!</p>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 5 -->
+                <section>
+                    <section>
+                        <h1 class="star-wars-title">PHP 2<sub>Episódio II - Ataque dos Clones</sub></h1>
+                    </section>
+                    <section>
+                        <img class="stretch" style="background-color: transparent; border: none;" src="img/world_wide_web.png" />
+                    </section>
+                </section>
+                
+                <!-- SLIDE 6 -->
+                <section>
+                    <section>
+                        <h1 class="star-wars-title">PHP 3<sub>PHP Hypertext Processor</sub><sub>Episódio III - A Vingança dos Sith</sub></h1>
+                    </section>
+                    <section>
+                        <figure style="display: inline-block;">
+                            <img src="img/andi.jpg" />
+                            <figcaption>
+                                Darth Andi
+                            </figcaption>
+                        </figure>
+                        <figure style="display: inline-block;">
+                            <img src="img/zeev.jpg" />
+                            <figcaption>
+                                Darth Zeev
+                            </figcaption>
+                        </figure>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 7 -->
+                <section>
+                    <section>
+                        <h1 class="star-wars-title">PHP 4<sub>Episódio IV - Uma Nova Esparança</sub></h1>
+                    </section>
+                    <section>
+                        <figure style="display: inline-block;">
+                            <img src="img/zend.png" />
+                            <figcaption>
+                                Zend Engine knows the Force!!!
+                            </figcaption>
+                        </figure>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 8 -->
+                <section>
+                    <section>
+                        <h1 class="star-wars-title">PHP 5<sub>Episódio V - O Império Contra-ataca</sub></h1>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="img/Yodalukedagobah.png" />
+                            <figcaption>
+                                Aprende novos truques...
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section data-background="img/luke-moving-objects.gif">
+                        <h1>Mexe com objetos</h1>
+                        <h4>(padawan style)</h4>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="img/Luke_vs_Vader.jpg" />
+                            <figcaption>
+                                Inicia sua campanha para ganhar a galáxia (web)!!!
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section id="luke-says-no">
+                        <audio id="luke-talks">
+                            <source src="impossible.mp3" />
+                        </audio>
+                        <p>Mas...</p>
+                        <img src="img/luke-looses-hand.jpg" />
+                    </section>
+                    <section data-background="img/lukes-new-hand.gif">
+                        <h1>Termina com muitas novidades!!</h1>
+                        <h4>(5.1, 5.2, 5.3, 5.4, 5.5 e 5.6)</h4>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 9 -->
+                <section>
+                    <section>
+                        <h1 class="star-wars-title">PHP 6<sub>Episódio VI - O Retorno <span style="text-decoration:line-through;">dos que não foram</span> de Jedi</sub></h1>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="img/ewoks.jpeg" />
+                            <figcaption>
+                                Tentaram enfeitar demais!!!
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="img/luke-jedi-master.jpg" />
+                            <figcaption>
+                                Mesmo assim, foi um caminho de aprendizado e maturidade
+                            </figcaption>
+                        </figure>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 10 -->
+                <section>
+                    <h1 class="star-wars-title">PHP 7 <sub>Episódio VII - O Despertar da Força Web</sub></h1>
+                </section>
+                
+                <!-- SLIDE 11 -->
+                <section>
+                    <figure>
+                        <img src="img/old-luke-skywalker.jpg" />
+                        <figcaption>
+                            Parece que se foram realmente 30 anos!!
+                        </figcaption>
+                    </figure>
+                </section>
+                
+                <!-- SLIDE 12 -->
+                <section>
+                    <section>
+                        <figure>
+                            <img src="img/millenium-falcon.jpg" />
+                            <figcaption>
+                                Melhorou a performance!!!
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h3><a href="http://talks.php.net/fluent15#/boxspecs">http://talks.php.net/fluent15#/boxspecs</a></h3>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 13 -->
+                <section>
+                    <figure>
+                        <img src="img/ast.png" />
+                        <figcaption>
+                            Abstract Syntax Tree
+                        </figcaption>
+                    </figure>
+                </section>
+                
+                <!-- SLIDE 14 -->
+                <section data-background="img/stormtroopers.jpg">
+                    <h2 style="color: yellow; 
+                        text-shadow: 2px 2px 0 black,
+                                     2px -2px 0 black, 
+                                    -2px 2px 0 black, 
+                                    -2px -2px 0 black;">Parâmetros e Retornos de função não são todos clones mais...</h2>
+                </section>
+                
+                <!-- SLIDE 15 -->
+                <section data-background-transition="convex">
+                    <section data-background="img/diff-stormtroopers.jpg">
+                        <h1 style="color: red; 
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Podem ser especificados!!!</h1>
+                    </section>
+                    <section>
+                        <pre><code class="php">
+&lt;?php
+    declare(strict_types=1);
+
+    function soma(int $a, int $b): int {
+        return $a + $b;
+    }
+                        </code></pre>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 16 -->
+                <section>
+                    <section>
+                        <h1>Sugar Syntax</h1>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    $nome = $_GET['nome'] ?? 'Anônimo';
+    $users = User::findAll() ?? null;
+                        </code></pre>
+                        <h3>Null Coallesce Operator</h3>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    // AO INVÉS DISSO...
+    function cmp($a, $b)
+    {   
+        if ($a == $b) {
+        return 0;
+        }
+        return ($a < $b) ? -1 : 1;
+    }
+
+    // ISSO
+    function cmp($a, $b)
+    {   
+        return $a <=> $b;
+    }
+                        </code></pre>
+                        <h3>Spaceship Operator</h3>
+                    </section>
+                    <section>
+                        <h2>&lt;=&gt;</h2>
+                        <img class="fragment" src="img/vaders-tie-fighter.png" />
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    use \Namespace\{Classe1, Classe2};
+    use function \Namespace\{exibirVar, sortear};
+    use const \Namespace\{ABC, XYZ};
+                        </code></pre>
+                        <h2>Agrupamento do <em>USE</em></h2>
+                    </section>
+                    <section>
+                        <img class="stretch" src="img/this_is_useless_star_wars.gif" />
+                    </section>
+                </section>
+                
+                <!-- SLIDE 17 -->
+                <section>
+                    <section data-background="img/captain-phasma.jpg">
+                        <h1 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Classes Anônimas</h1>
+                        <h3 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">(coadjuvante de luxo)</h3>
+                        <h4 class="fragment" style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Capitã Phasma</h4>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    class User
+    {
+        private $name;
+        private $surname;
+
+        public function __construct(string $name, string $surname)
+        {
+            $this->name = $name;
+            $this->surname = $surname;
+        }
+
+        public function getCompleteName(): string
+        {
+            return 'Meu nome é ' . $this->name . ' ' . $this->surname;
+        }
+    }
+
+    $nome_completo = (new User('Luke', 'Skywalker'))->getCompleteName();
+    echo $nome_completo;
+        ====> EXIBE 'Meu nome é Luke Skywalker'
+                        </code></pre>
+                        <h2>Já podia fazer isso...
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    $nome_completo = (new class('Luke', 'Skywalker') {
+        private $name;
+        private $surname;
+
+        public function __construct(string $name, string $surname)
+        {
+            $this->name = $name;
+            $this->surname = $surname;
+        }
+
+        public function getCompleteName(): string
+        {
+            return 'Meu nome é ' . $this->name . ' ' . $this->surname;
+        }
+    })->getCompleteName();
+    echo $nome_completo;
+        ====> EXIBE 'Meu nome é Luke Skywalker'
+                        </code></pre>
+                        <h2>Agora pode fazer isso também!!!
+                    </section>
+                </section>
+                
+                <!-- SLIDE 18 -->
+                <section>
+                    <section data-background="img/forceawakens-falcon-hyperspace-behind.jpg">
+                        <h1 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Unserialize Filter</h1>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    $safe_area = unserialize($hyperspace_travel, [
+        "allowed_classes" => [
+            "NoMeteorCloudClass",
+            "NoEmpireClass"
+        ]
+    ]);
+
+    $any_area = unserialize($hyperspace_travel, ["allowed_classes" => true]);
+    $safest_area = unserialize($hyperspace_travel, ["allowed_classes" => false]);
+                        </code></pre>
+                        <blockquote>
+                            "Travelling through hyperspace ain't dusting crops, boy!"
+                            <h6 style="text-align: right; margin-right: 50px;">Han Solo</h6>
+                        </blockquote>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 19 -->
+                <section>
+                    <section data-background="img/generator-star-wars.png">
+                        <h1 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Generators</h1>
+                        <h3 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Delegação e Retorno</h3>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    $checkDeathStarVulnerability =  function (string $port)
+    {
+        $vulnerability = false;
+        if ($port === 'DEATHSTAR EXHAUST PORT') {
+            yield "$port HAS NO VULNERABILITY!";
+        } else {
+            $vulnerability = true;
+            yield "VULNERABILITY FOUND AT $port!"; 
+        }
+        
+        return $vulnerability;
+    };
+                        </code></pre>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    $readDeathStarBlueprint = function (string $deathstar) use ($checkDeathStarVulnerability)
+    {
+        if (!$deathstarHandle = fopen($deathstar, 'r')) {
+           return 'WRONG BLUEPRINT!';
+        }
+
+        $vulnerability = false;
+        while (false !== ($port = fgets($deathstar)))
+        {
+            yield from $checkDeathStarVulnerability($port);
+            $vulnerability = $checkDeathStarVulnerability->getReturn();
+        }
+
+        return ($vulnerability) ? "ATTACK IMMEDIATELY!!!" : "IT'S A TRAP!!!"
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    foreach ($readDeatStarBlueprint('/path/to/deathstar/blueprints.txt') as $port)
+        echo $port;
+
+    echo $readDeatStarBlueprint->getReturn();
+                        </code></pre>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 20 -->
+                <section>
+                    <section data-background="img/death-star-explosion-o.gif">
+                        <h1 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Fatal Errors Exceptions</h1>
+                    </section>
+                    <section>
+                        <pre><code>
+&lt;?php
+    class Jedi
+    {
+        public function train()
+        {
+            return "Use the Force";
+        }
+    }
+
+    class Sith
+    {
+        public function train()
+        {
+            return "Use your anger";
+        }
+    }
+
+    function jediTraining(Jedi $anybody)
+    {
+        return $anybody->train();
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <pre><code class="php">
+&lt;?php
+    try {
+        $luke = new Jedi();
+        $vader = new Sith();
+        jediTraining($luke);
+        jediTraining($vader);
+    } catch (\TypeError $e) {
+        echo "ERROR: ". $e->getMessage();
+        echo "LINE: " . $e->getLine();
+    }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <p style="text-align: justify;">
+                            ERROR: Argument 1 passed to jediTraining() must be an instance of Jedi, instance of Sith given, called in errortype.php on line 28
+                            <br/>
+                            LINE: 18
+                        </p>
+                        <blockquote>LEMBRE-SE: se for testar valores primitivos, usar a declaração de <em>strict types</em>!</blockquote>
+                    </section>
+                    <section>
+                        <pre><code class="php">
+&lt;?php
+    try {
+        $valor = intdiv(1, 0);
+    } catch (\DivisionByZeroError $e) {
+        echo "ERROR: ". $e->getMessage();
+        echo "LINE: " . $e->getLine();
+    }
+                        </code></pre>
+                        <p style="text-align: justify;">
+                            ERROR: Division by zero<br/>LINE: 3
+                        </p>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 21 -->
+                <section>
+                    <section data-background-video="starwarsviifinal.webm">
+                        <h1>O que vem (ou pode vir) por aí...</h1>
+                        <h3 class="fragment" style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Em discussão/Rascunho (draft)</h3>
+                        <h3 class="fragment" style="color: green;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Aceito/Implementado</h3>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    function compassionInPalpatinesHeart: void {
+        return false; // Fatal error: Void deve não ter retorno!!!
+    }
+                            </code>
+                        </pre>
+                        <h2 style="color: green;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Retorno de função/método <em>void</em></h2>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    $y = 'Leia';
+    // ANTES
+    $vaders_sons = function($x) use ($y) {
+        return $x . ' and ' . $y;
+    };
+    $vaders_sons('Luke');
+    // DEPOIS
+    $vaders_sons = function($x) => $x . ' and ' . $y;
+    $vaders_sons('Luke');
+                            </code>
+                        </pre>
+                        <h2 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Arrow Functions</h2>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    enum DeathStars {
+        DeathStar1,
+        DeathStar2,
+        Starkiller
+    }
+    
+    switch ($type) {
+        case DeathStars::DeathStar1:
+            echo "NICE!! A vulnerability exists in the exhaustion port!!";
+            break;
+        case DeathStars::DeathStar2:
+            echo "ALMOST NICE!! Vulnerability still exists, but has a force shield";
+            break;
+        case DeathStars::Starkiller:
+            echo "REALLY??!! Exhaustion port AGAIN??!!";
+            break;
+        case 
+    }
+                            </code>
+                        </pre>
+                        <h2 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Tipos Enumerados</h2>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    class Ship&lt;Config, ShipName&gt;
+    {
+        private $config;
+        private $name;
+
+        public function __construct(Config $config, ShipName $name)
+        {
+            $this->config = $config;
+            $this->name = $name;
+        }
+    }
+    
+    $battle_ship = new Ship&lt;string, string&gt;('photon canon', 'X-Wing');
+    $transport_ship = new Ship&lt;int, string&gt;(100, 'Imperial Military Transport');
+                            </code>
+                        </pre>
+                        <h2 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Tipos Genéricos</h2>
+                    </section>
+                    <section>
+                        <h2 style="color: green;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Suporte a HTTP/2 e server push</h2>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    foreach ($jedis as $jedi) {
+        echo "Kylo Ren kills {$jedi->name}";
+    } else {
+        echo "No more jedis!";
+    }
+                            </code>
+                        </pre>
+                        <h2 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Loop + Else</h2>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    function ReyUsesTheForce($phrase, $gesture = null, $concentration = 5) { ... }
+    
+    ReyUsesTheForce("You'll release me now!", null, 3);
+    ReyUsesTheForce("You'll release me now!", { concentration: 10});
+    
+                            </code>
+                        </pre>
+                        <h2 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Parâmetros nomeados</h2>
+                    </section>
+                    <section id="darth-vader">
+                        <audio id="darth-vader-breath">
+                            <source src="darth-vader-breath.mp3" />
+                        </audio>
+                        <pre>
+                            <code class="php">
+&lt;?php
+    class DarthVader extends Jedi implements Sith {
+        public int $number_of_childs;
+        public string $light_saber_color;
+    }
+                            </code>
+                        </pre>
+                        <h2 style="color: yellow;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">Atributos de classe tipados</h2>
+                    </section>
+                </section>
+                
+                <!-- SLIDE 22 -->
+                <section>
+                    <h1>
+                        OBRIGADO!
+                    </h1>
+                    <h3>
+                        Marcio Albuquerque<br/>
+                        marcio.lima.albuquerque@gmail.com<br/>
+                        @mlalbuquerque
+                    </h3>
+                    <blockquote>May the Force be with you</blockquote>
+                </section>
+                
+            </div>
+        </div>
+        
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            var audioPlayer = document.getElementById("star-wars-music");
+            var StarWarsMusic = {
+                stop: function () {
+                    audioPlayer.stop();
+                },
+                start: function () {
+                    setTimeout(function () {
+                        audioPlayer.play();
+                    }, 1500);
+                }
+            };
+
+            Reveal.initialize({
+                history: true,
+                transition: 'convex',
+                transitionSpeed: 'default',
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+            Reveal.addEventListener('fragmentshown', function (event) {
+                if (event.fragment.id === "http-light-saber")
+                    document.getElementById("light-saber").play();
+                else if (event.fragment.id === "darth-sidious")
+                    document.getElementById("darth-sidious-talk").play();
+            });
+            
+            Reveal.addEventListener('slidechanged', function (event) {
+                if (event.currentSlide.id === "start")
+                    document.getElementById("star-wars-music").play();
+                else if (event.currentSlide.id === "darth-vader")
+                    document.getElementById("darth-vader-breath").play();
+                else if (event.currentSlide.id === "jarjar")
+                    document.getElementById("jarjar-talks").play();
+                else if (event.currentSlide.id === "luke-says-no")
+                    document.getElementById("luke-talks").play();
+            });
+        </script>
+    </body>
+</html>
