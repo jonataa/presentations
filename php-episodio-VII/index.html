@@ -16,9 +16,13 @@
     <body onload="StarWarsMusic.start();">
         <div class="reveal">
             <div class="slides">
-                <!-- SLIDE 1 -->
-                <section id="start" data-background="#000000">
-
+                
+                <section id="slide0">
+                    <h1>Marcio Albuquerque</h1>
+                    <h3>Senta que lá vem história...</h3>
+                </section>
+                
+                <section id="slide1" data-background="#000000">
                     <audio id="star-wars-music">
                         <source src="star-wars.mp3" type="audio/mpeg" />
                     </audio>
@@ -38,22 +42,21 @@
 
                             <p>Depois de um período de paz, a Primeira Ordem surge com várias linguagens de programação para tentar derrubar a hegemonia e soberania que o PHP conquistou, com mais de 80% da web.</p>
                             
-                            <p>Contudo, o conselho do PHP, começa a criar uma nova arma, o PHP 7. Mais rápido, mais seguro, mais uniforme, pode juntar os povos ao redor dessa nova maravilha1</p>
+                            <p>Contudo, o conselho do PHP, começa a criar uma nova arma, o PHP 7. Mais rápido, mais seguro, mais uniforme, pode juntar os povos ao redor dessa nova maravilha!</p>
                             
                             <p>Inicia-se, então, a distribuição do PHP 7 pela galáxia com várias possibilidades de novas conquistas e aventuras!</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- SLIDE 2 -->
-                <section>
-                    <section>
+                <section id="slide2">
+                    <section id="slide2_1">
                         <h1>Padawans?</h1>
                     </section>
-                    <section data-background="img/death-star-blueprint.gif">
+                    <section id="slide2_2" data-background="img/death-star-blueprint.gif">
                         <h1 style="color: yellow;">Como web apps funcionam?</h1>
                     </section>
-                    <section data-background="img/the-force-is-strong.jpg">
+                    <section id="slide2_3" data-background="img/the-force-is-strong.jpg">
                         <audio id="light-saber">
                             <source src="SaberOn.wav" />
                         </audio>
@@ -67,31 +70,31 @@
                             HTTP
                         </h1>
                     </section>
-                    <section>
+                    <section id="slide2_4">
                         <img style="background-color: transparent; border: none;" src="img/tie-fighter.png" />
                         <h3 style="position: absolute; top: 300px; left: 100px;" class="fragment">???</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <img style="background-color: transparent; border: none;" class="fragment" src="img/death-star.png" />
                         <h3 style="" class="fragment">X, Y, Z</h3>
                     </section>
-                    <section>
+                    <section id="slide2_5">
                         <h3>Request</h3>
                         <pre><code>
-                                GET /hello.html HTTP/1.1
+GET /hello.html HTTP/1.1
                         </code></pre>
                         <h3>Response</h3>
                         <pre><code>
-                                HTTP/1.1 200 OK
-                                Content-Length: 88
-                                Content-Type: text/html
-                                &lt;html&gt;
-                                    &lt;body&gt;
-                                        &lt;h1&gt;Hello, World!&lt;/h1&gt;
-                                    &lt;/body&gt;
-                                &lt;/html&gt;
+HTTP/1.1 200 OK
+Content-Length: 88
+Content-Type: text/html
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                         </code></pre>
                     </section>
-                    <section>
+                    <section id="slide2_6">
                         <audio id="darth-sidious-talk">
                             <source src="darth_sidious.mp3" />
                         </audio>
@@ -102,46 +105,44 @@
                         <img id="darth-sidious" style="background-color: transparent; border: none; position: absolute; top: 0; left: 0;" class="fragment" src="img/darth-sidious.png" />
                         <p style="position: absolute; top: 0; left: 200px;" class="fragment">Use your anger!!</p>
                     </section>
-                    <section>
+                    <section id="slide2_7">
                         <h4>Request</h4>
                         <pre><code>
-                                GET /hello.php HTTP/1.1
+GET /hello.php HTTP/1.1
                         </code></pre>
                         <h4>PHP</h4>
                         <pre><code>
-                                &lt;html&gt;
-                                    &lt;body&gt;
-                                    &lt;h1&gt;<mark>&lt;?php echo "Hello, World!"; ?&gt;</mark>&lt;/h1&gt;
-                                    &lt;/body&gt;
-                                &lt;/html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+    &lt;h1&gt;<mark>&lt;?php echo "Hello, World!"; ?&gt;</mark>&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                         </code></pre>
                         <h4>Response</h4>
                         <pre><code>
-                                HTTP/1.1 200 OK
-                                Content-Length: 88
-                                Content-Type: text/html
-                                &lt;html&gt;
-                                    &lt;body&gt;
-                                        &lt;h1&gt;Hello, World!&lt;/h1&gt;
-                                    &lt;/body&gt;
-                                &lt;/html&gt;
+HTTP/1.1 200 OK
+Content-Length: 88
+Content-Type: text/html
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                         </code></pre>
                     </section>
                 </section>
                 
-                <!-- SLIDE 3 -->
-                <section>
+                <section id="slide3">
                     <img src="img/Rasmus-Lerdorf.png" />
                     <p style="text-decoration: line-through;">George Lucas</p>
                     <p>Rasmus Lerdorf</p>
                 </section>
 
-                <!-- SLIDE 4 -->
-                <section>
-                    <section>
+                <section id="slide4">
+                    <section id="slide4_1">
                         <h1 class="star-wars-title">PHP/FI<sub>Episódio I - A Ameaça Fantasma</sub></h1>
                     </section>
-                    <section id="jarjar">
+                    <section id="slide4_2">
                         <audio id="jarjar-talks">
                             <source src="jarjar.mp3" />
                         </audio>
@@ -150,22 +151,20 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 5 -->
-                <section>
-                    <section>
+                <section id="slide5">
+                    <section id="slide5_1">
                         <h1 class="star-wars-title">PHP 2<sub>Episódio II - Ataque dos Clones</sub></h1>
                     </section>
-                    <section>
+                    <section id="slide5_2">
                         <img class="stretch" style="background-color: transparent; border: none;" src="img/world_wide_web.png" />
                     </section>
                 </section>
                 
-                <!-- SLIDE 6 -->
-                <section>
-                    <section>
+                <section id="slide6">
+                    <section id="slide6_1">
                         <h1 class="star-wars-title">PHP 3<sub>PHP Hypertext Processor</sub><sub>Episódio III - A Vingança dos Sith</sub></h1>
                     </section>
-                    <section>
+                    <section id="slide6_2">
                         <figure style="display: inline-block;">
                             <img src="img/andi.jpg" />
                             <figcaption>
@@ -181,12 +180,11 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 7 -->
-                <section>
-                    <section>
+                <section id="slide7">
+                    <section id="slide7_1">
                         <h1 class="star-wars-title">PHP 4<sub>Episódio IV - Uma Nova Esparança</sub></h1>
                     </section>
-                    <section>
+                    <section id="slide7_2">
                         <figure style="display: inline-block;">
                             <img src="img/zend.png" />
                             <figcaption>
@@ -196,12 +194,11 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 8 -->
-                <section>
-                    <section>
+                <section id="slide8">
+                    <section id="slide8_1">
                         <h1 class="star-wars-title">PHP 5<sub>Episódio V - O Império Contra-ataca</sub></h1>
                     </section>
-                    <section>
+                    <section id="slide8_2">
                         <figure>
                             <img src="img/Yodalukedagobah.png" />
                             <figcaption>
@@ -209,11 +206,11 @@
                             </figcaption>
                         </figure>
                     </section>
-                    <section data-background="img/luke-moving-objects.gif">
+                    <section id="slide8_3" data-background="img/luke-moving-objects.gif">
                         <h1>Mexe com objetos</h1>
                         <h4>(padawan style)</h4>
                     </section>
-                    <section>
+                    <section id="slide8_4">
                         <figure>
                             <img src="img/Luke_vs_Vader.jpg" />
                             <figcaption>
@@ -221,25 +218,74 @@
                             </figcaption>
                         </figure>
                     </section>
-                    <section id="luke-says-no">
+                    <section id="slide8_5">
                         <audio id="luke-talks">
                             <source src="impossible.mp3" />
                         </audio>
                         <p>Mas...</p>
                         <img src="img/luke-looses-hand.jpg" />
                     </section>
-                    <section data-background="img/lukes-new-hand.gif">
+                    <section id="slide8_6" data-background="img/lukes-new-hand.gif">
                         <h1>Termina com muitas novidades!!</h1>
-                        <h4>(5.1, 5.2, 5.3, 5.4, 5.5 e 5.6)</h4>
+                    </section>
+                    <section id="slide8_7">
+                        <h1>PHP 5.1</h1>
+                        <ul>
+                            <li>PDO (PHP Data Objects) é padrão</li>
+                            <li>Reescrita de funções de date/time</li>
+                        </ul>
+                    </section>
+                    <section id="slide8_8">
+                        <h1>PHP 5.2</h1>
+                        <ul>
+                            <li>Extensão JSON é padrão</li>
+                            <li>Filtro de Inputs do Usuário é padrão</li>
+                        </ul>
+                    </section>
+                    <section id="slide8_9">
+                        <h1>PHP 5.3</h1>
+                        <ul>
+                            <li>Namespaces</li>
+                            <li>Closures/Lambdas</li>
+                        </ul>
+                    </section>
+                    <section id="slide8_10">
+                        <h1>PHP 5.4</h1>
+                        <ul>
+                            <li>Traits</li>
+                            <li>Sintaxe curta para arrays<pre><code>$a = [1, 2, 3];</code></pre></li>
+                            <li>Derreferenciamento de Funções em Arrays<pre><code>getUser()[2];</code></pre></li>
+                            <li>Servidor web embutido</li>
+                        </ul>
+                    </section>
+                    <section id="slide8_11">
+                        <h1>PHP 5.5</h1>
+                        <ul>
+                            <li>Generators</li>
+                            <li>Nova API de Senhas (Password Hashing API)</li>
+                            <li>Resolução de nome completo de classe usando <code>::class</code></li>
+                            <li>Derreferenciamento de vetor e strings<pre><code>echo "Marcio"[3];</code></pre></li>
+                            <li><code>empty</code> aceita retornos de função/métodos</li>
+                            <li><code>finally</code></li>
+                        </ul>
+                    </section>
+                    <section id="slide8_12">
+                        <h1>PHP 5.6</h1>
+                        <ul>
+                            <li>Funções/Métodos variádicos</li>
+                            <li>Descompactação de Parâmetros</li>
+                            <li>Derreferenciamento de vetor e strings<pre><code>echo "Skywalker"[3];</code></pre></li>
+                            <li><code>use function</code> e <code>use const</code></li>
+                            <li>Exponenciação via **</li>
+                        </ul>
                     </section>
                 </section>
                 
-                <!-- SLIDE 9 -->
-                <section>
-                    <section>
+                <section id="slide9">
+                    <section id="slide9_1">
                         <h1 class="star-wars-title">PHP 6<sub>Episódio VI - O Retorno <span style="text-decoration:line-through;">dos que não foram</span> de Jedi</sub></h1>
                     </section>
-                    <section>
+                    <section id="slide9_1">
                         <figure>
                             <img src="img/ewoks.jpeg" />
                             <figcaption>
@@ -247,7 +293,21 @@
                             </figcaption>
                         </figure>
                     </section>
-                    <section>
+                    <section id="slide9_2">
+                        <figure>
+                            <img src="img/dark-side-has-coffee.jpg" />
+                            <figcaption>Muitos foram tentados pelo lado escuro da Força</figcaption>
+                        </figure>
+                    </section>
+                    <section id="slide9_3">
+                        <figure>
+                            <img class="fragment" src="img/beginning_php_6_apache_mysql_6_web_development.jpg" />
+                            <img class="fragment" src="img/php6-mysql.jpg" />
+                            <img class="fragment" src="img/professional_php6.jpg" />
+                            <figcaption>Livros pipocaram e PHP 6 nem existia...</figcaption>
+                        </figure>
+                    </section>
+                    <section id="slide9_4">
                         <figure>
                             <img src="img/luke-jedi-master.jpg" />
                             <figcaption>
@@ -257,38 +317,46 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 10 -->
-                <section>
+                <section id="slide10">
                     <h1 class="star-wars-title">PHP 7 <sub>Episódio VII - O Despertar da Força Web</sub></h1>
                 </section>
                 
-                <!-- SLIDE 11 -->
-                <section>
+                <section id="slide11">
                     <figure>
                         <img src="img/old-luke-skywalker.jpg" />
                         <figcaption>
                             Parece que se foram realmente 30 anos!!
+                            <h6>(foram só 2)</h6>
                         </figcaption>
                     </figure>
                 </section>
                 
-                <!-- SLIDE 12 -->
-                <section>
-                    <section>
+                <section id="slide12">
+                    <section id="slide12_1">
                         <figure>
                             <img src="img/millenium-falcon.jpg" />
                             <figcaption>
-                                Melhorou a performance!!!
+                                <h3>Melhorou a performance!!!</h3>
+                                <h6>Faz a Corrida de Kessel em 14 parsecs</h6>
+                            </figcaption>
+                        </figure>
+                        <figure class="fragment" style="position: absolute; top: 10px; right: 10px;">
+                            <img src="img/han-solo.jpg" />
+                            <figcaption>
+                                <h3 style="color: lightgreen; 
+                            text-shadow: 2px 2px 2px green,
+                            2px -2px 2px green, 
+                            -2px 2px 2px green, 
+                            -2px -2px 2px green;">12 parsecs!!!!!</h3>
                             </figcaption>
                         </figure>
                     </section>
-                    <section>
+                    <section id="slide12_2">
                         <h3><a href="http://talks.php.net/fluent15#/boxspecs">http://talks.php.net/fluent15#/boxspecs</a></h3>
                     </section>
                 </section>
                 
-                <!-- SLIDE 13 -->
-                <section>
+                <section id="slide13">
                     <figure>
                         <img src="img/ast.png" />
                         <figcaption>
@@ -297,8 +365,7 @@
                     </figure>
                 </section>
                 
-                <!-- SLIDE 14 -->
-                <section data-background="img/stormtroopers.jpg">
+                <section id="slide14" data-background="img/stormtroopers.jpg">
                     <h2 style="color: yellow; 
                         text-shadow: 2px 2px 0 black,
                                      2px -2px 0 black, 
@@ -306,16 +373,15 @@
                                     -2px -2px 0 black;">Parâmetros e Retornos de função não são todos clones mais...</h2>
                 </section>
                 
-                <!-- SLIDE 15 -->
-                <section data-background-transition="convex">
-                    <section data-background="img/diff-stormtroopers.jpg">
+                <section id="slide15" data-background-transition="convex">
+                    <section id="slide15_1" data-background="img/diff-stormtroopers.jpg">
                         <h1 style="color: red; 
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Podem ser especificados!!!</h1>
                     </section>
-                    <section>
+                    <section id="slide15_2">
                         <pre><code class="php">
 &lt;?php
     declare(strict_types=1);
@@ -327,12 +393,11 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 16 -->
-                <section>
-                    <section>
+                <section id="slide16">
+                    <section id="slide16_1">
                         <h1>Sugar Syntax</h1>
                     </section>
-                    <section>
+                    <section id="slide16_2">
                         <pre><code>
 &lt;?php
     $nome = $_GET['nome'] ?? 'Anônimo';
@@ -340,7 +405,7 @@
                         </code></pre>
                         <h3>Null Coallesce Operator</h3>
                     </section>
-                    <section>
+                    <section id="slide16_3">
                         <pre><code>
 &lt;?php
     // AO INVÉS DISSO...
@@ -360,11 +425,11 @@
                         </code></pre>
                         <h3>Spaceship Operator</h3>
                     </section>
-                    <section>
+                    <section id="slide16_4">
                         <h2>&lt;=&gt;</h2>
                         <img class="fragment" src="img/vaders-tie-fighter.png" />
                     </section>
-                    <section>
+                    <section id="slide16_5">
                         <pre><code>
 &lt;?php
     use \Namespace\{Classe1, Classe2};
@@ -373,14 +438,13 @@
                         </code></pre>
                         <h2>Agrupamento do <em>USE</em></h2>
                     </section>
-                    <section>
+                    <section id="slide16_6">
                         <img class="stretch" src="img/this_is_useless_star_wars.gif" />
                     </section>
                 </section>
                 
-                <!-- SLIDE 17 -->
-                <section>
-                    <section data-background="img/captain-phasma.jpg">
+                <section id="slide17">
+                    <section id="slide17_1" data-background="img/captain-phasma.jpg">
                         <h1 style="color: yellow;
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
@@ -397,7 +461,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Capitã Phasma</h4>
                     </section>
-                    <section>
+                    <section id="slide17_2">
                         <pre><code>
 &lt;?php
     class User
@@ -423,7 +487,7 @@
                         </code></pre>
                         <h2>Já podia fazer isso...
                     </section>
-                    <section>
+                    <section id="slide17_3">
                         <pre><code>
 &lt;?php
     $nome_completo = (new class('Luke', 'Skywalker') {
@@ -448,16 +512,15 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 18 -->
-                <section>
-                    <section data-background="img/forceawakens-falcon-hyperspace-behind.jpg">
+                <section id="slide18">
+                    <section id="slide18_1" data-background="img/forceawakens-falcon-hyperspace-behind.jpg">
                         <h1 style="color: yellow;
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Unserialize Filter</h1>
                     </section>
-                    <section>
+                    <section id="slide18_2">
                         <pre><code>
 &lt;?php
     $safe_area = unserialize($hyperspace_travel, [
@@ -477,9 +540,8 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 19 -->
-                <section>
-                    <section data-background="img/generator-star-wars.png">
+                <section id="slide19">
+                    <section id="slide19_1" data-background="img/generator-star-wars.png">
                         <h1 style="color: yellow;
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
@@ -491,7 +553,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Delegação e Retorno</h3>
                     </section>
-                    <section>
+                    <section id="slide19_2">
                         <pre><code>
 &lt;?php
     $checkDeathStarVulnerability =  function (string $port)
@@ -508,7 +570,7 @@
     };
                         </code></pre>
                     </section>
-                    <section>
+                    <section id="slide19_3">
                         <pre><code>
 &lt;?php
     $readDeathStarBlueprint = function (string $deathstar) use ($checkDeathStarVulnerability)
@@ -528,7 +590,7 @@
     }
                         </code></pre>
                     </section>
-                    <section>
+                    <section id="slide19_4">
                         <pre><code>
 &lt;?php
     foreach ($readDeatStarBlueprint('/path/to/deathstar/blueprints.txt') as $port)
@@ -539,16 +601,15 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 20 -->
-                <section>
-                    <section data-background="img/death-star-explosion-o.gif">
+                <section id="slide20">
+                    <section id="slide20_1" data-background="img/death-star-explosion-o.gif">
                         <h1 style="color: yellow;
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Fatal Errors Exceptions</h1>
                     </section>
-                    <section>
+                    <section id="slide20_2">
                         <pre><code>
 &lt;?php
     class Jedi
@@ -573,7 +634,7 @@
     }
                         </code></pre>
                     </section>
-                    <section>
+                    <section id="slide20_3">
                         <pre><code class="php">
 &lt;?php
     try {
@@ -587,7 +648,7 @@
     }
                         </code></pre>
                     </section>
-                    <section>
+                    <section id="slide20_4">
                         <p style="text-align: justify;">
                             ERROR: Argument 1 passed to jediTraining() must be an instance of Jedi, instance of Sith given, called in errortype.php on line 28
                             <br/>
@@ -595,7 +656,7 @@
                         </p>
                         <blockquote>LEMBRE-SE: se for testar valores primitivos, usar a declaração de <em>strict types</em>!</blockquote>
                     </section>
-                    <section>
+                    <section id="slide20_5">
                         <pre><code class="php">
 &lt;?php
     try {
@@ -611,10 +672,18 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 21 -->
-                <section>
-                    <section data-background-video="starwarsviifinal.webm">
-                        <h1>O que vem (ou pode vir) por aí...</h1>
+                <section id="slide21">
+                    <section id="slide21_1" data-background-video="starwarsviifinal.webm">
+                        <h1 style="color: white;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;">O que vem (ou pode vir) por aí...</h1>
+                        <h2 class="fragment" style="color: white;
+                            text-shadow: 2px 2px 0 black,
+                                         2px -2px 0 black, 
+                                        -2px 2px 0 black, 
+                                        -2px -2px 0 black;"><a href="">https://wiki.php.net/rfc</a></h2>
                         <h3 class="fragment" style="color: yellow;
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
@@ -626,7 +695,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Aceito/Implementado</h3>
                     </section>
-                    <section>
+                    <section id="slide21_2">
                         <pre>
                             <code class="php">
 &lt;?php
@@ -641,7 +710,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Retorno de função/método <em>void</em></h2>
                     </section>
-                    <section>
+                    <section id="slide21_2">
                         <pre>
                             <code class="php">
 &lt;?php
@@ -662,7 +731,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Arrow Functions</h2>
                     </section>
-                    <section>
+                    <section id="slide21_3">
                         <pre>
                             <code class="php">
 &lt;?php
@@ -692,7 +761,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Tipos Enumerados</h2>
                     </section>
-                    <section>
+                    <section id="slide21_4">
                         <pre>
                             <code class="php">
 &lt;?php
@@ -718,14 +787,14 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Tipos Genéricos</h2>
                     </section>
-                    <section>
+                    <section id="slide21_5">
                         <h2 style="color: green;
                             text-shadow: 2px 2px 0 black,
                                          2px -2px 0 black, 
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Suporte a HTTP/2 e server push</h2>
                     </section>
-                    <section>
+                    <section id="slide21_6">
                         <pre>
                             <code class="php">
 &lt;?php
@@ -742,7 +811,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Loop + Else</h2>
                     </section>
-                    <section>
+                    <section id="slide21_7">
                         <pre>
                             <code class="php">
 &lt;?php
@@ -759,7 +828,7 @@
                                         -2px 2px 0 black, 
                                         -2px -2px 0 black;">Parâmetros nomeados</h2>
                     </section>
-                    <section id="darth-vader">
+                    <section id="slide21_8">
                         <audio id="darth-vader-breath">
                             <source src="darth-vader-breath.mp3" />
                         </audio>
@@ -780,17 +849,17 @@
                     </section>
                 </section>
                 
-                <!-- SLIDE 22 -->
                 <section>
                     <h1>
                         OBRIGADO!
                     </h1>
-                    <h3>
+                    <blockquote>May the Force be with you</blockquote>
+                    <h2 class="fragment">Perguntas?</h2>
+                    <h3 class="fragment">
                         Marcio Albuquerque<br/>
                         marcio.lima.albuquerque@gmail.com<br/>
                         @mlalbuquerque
                     </h3>
-                    <blockquote>May the Force be with you</blockquote>
                 </section>
                 
             </div>
@@ -833,13 +902,13 @@
             });
             
             Reveal.addEventListener('slidechanged', function (event) {
-                if (event.currentSlide.id === "start")
+                if (event.currentSlide.id === "slide1")
                     document.getElementById("star-wars-music").play();
-                else if (event.currentSlide.id === "darth-vader")
+                else if (event.currentSlide.id === "slide21_8")
                     document.getElementById("darth-vader-breath").play();
-                else if (event.currentSlide.id === "jarjar")
+                else if (event.currentSlide.id === "slide4_2")
                     document.getElementById("jarjar-talks").play();
-                else if (event.currentSlide.id === "luke-says-no")
+                else if (event.currentSlide.id === "slide8_5")
                     document.getElementById("luke-talks").play();
             });
         </script>
