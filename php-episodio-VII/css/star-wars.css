@@ -209,3 +209,17 @@ h1.star-wars-title sub {
     font-size: 0.3em;
     letter-spacing: 0;
 }
+
+h2.star-wars-title {
+    font-size: 3em !important;
+    color: yellow !important;
+    text-shadow: -5px -5px 0 black, 5px -5px 0 black, -5px 5px 0 black, 5px 5px 0 black !important;
+}
+
+h2.star-wars-title sub {
+    color: black;
+    text-shadow: none;
+    display: block;
+    font-size: 0.3em;
+    letter-spacing: 0;
+}
