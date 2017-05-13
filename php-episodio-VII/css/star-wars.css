@@ -211,7 +211,7 @@ h1.star-wars-title sub {
 }
 
 h2.star-wars-title {
-    font-size: 3em !important;
+    font-size: 5em !important;
     color: yellow !important;
     text-shadow: -5px -5px 0 black, 5px -5px 0 black, -5px 5px 0 black, 5px 5px 0 black !important;
 }
